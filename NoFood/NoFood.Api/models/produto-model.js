@@ -9,7 +9,7 @@ const produtoModel = new schema({
     preco: { type: Number, required: true },
     foto: { type: String, required: true },
     ativo: { type: Boolean, required: true },
-    dataCriacao: { type: true, default: Date.now }
+    dataCriacao: { type: Date, default: Date.now }
 }, { versionKey: false });
 
 produtoModel.pre('save', next => {

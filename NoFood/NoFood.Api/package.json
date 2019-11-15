@@ -2,8 +2,9 @@
   "name": "nofood.api",
   "version": "1.0.0",
   "description": "Api feita em NodeJS para utilização do nosso app NoFood",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amaury A. Costa",

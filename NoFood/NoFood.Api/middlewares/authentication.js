@@ -1,7 +1,7 @@
  const jwt = require('jsonwebtoken');
  const variables = require('../bin/configuration/variables');
 
- module.exports = (req, res, next) => {
+ module.exports = async (req, res, next) => {
     let token = req.body.token || req.query.token || req.headers['x-access-token'];
 
     if(token) {

@@ -3,8 +3,8 @@
 const repository = require('../repositories/usuario-repository');
 const validation = require('../bin/helpers/validation');
 const ctrlBase = require('../bin/base/controller-base');
-const variables = require('../bin/configuration/variables');
 
+const variables = require('../bin/configuration/variables');
 const md5 = require('md5');
 const jwt = require('jsonwebtoken');
 

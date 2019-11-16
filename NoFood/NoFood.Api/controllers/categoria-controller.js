@@ -1,39 +1,44 @@
 'use strict'
 
 const repository = require('../repositories/categoria-repository');
+const validation = require('../bin/helpers/validation');
+const ctrlBase = require('../bin/base/controller-base');
+
+const _repo = new repository();
 
 function categoriaController() {
 
 }
 
 categoriaController.prototype.post = async function(req, res) {
-    let resultado = await new repository().create(req.body);
+    let _validationContract = new validation();
 
-    res.status(201).send(resultado);
+    _validationContract.isRequired(req.body.titulo, 'O título é obrigatório');
+    _validationContract.isRequired(req.body.foto, 'A foto é obrigatória');
+    
+    ctrlBase.post(_repo, _validationContract, req, res);
 };
 
 categoriaController.prototype.put = async function(req, res) {
-    let resultado = await new repository().update(req.params.id, req.body);
+    let _validationContract = new validation();
+
+    _validationContract.isRequired(req.body.titulo, 'O título é obrigatório');
+    _validationContract.isRequired(req.body.foto, 'A foto é obrigatória');
+    _validationContract.isRequired(req.params.id, 'O Id que será atualizado é obrigatório');
     
-    res.status(202).send(resultado);
+    ctrlBase.put(_repo, _validationContract, req, res);
 };
 
 categoriaController.prototype.get = async function(req, res) {
-    let lista = await new repository().getAll();
-    
-    res.status(200).send(lista);
+    ctrlBase.get(_repo, req, res);
 };
 
 categoriaController.prototype.getById = async function(req, res) {
-    let categoria = await new repository().getById(req.params.id);
-
-    res.status(200).send(categoria);
+    ctrlBase.getById(_repo, req, res);
 };
 
 categoriaController.prototype.delete = async function(req, res) {
-    let deletado = await new repository().delete(req.params.id);
-
-    res.status(204).send(deletado);
+    ctrlBase.delete(_repo, req, res);
 };
 
 module.exports = categoriaController;

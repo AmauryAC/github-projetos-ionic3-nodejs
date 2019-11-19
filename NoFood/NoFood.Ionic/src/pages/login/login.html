@@ -5,45 +5,41 @@
   Ionic pages and navigation.
 -->
 
-<ion-content no-padding>
-
-  <div class="red">
+<ion-content padding>
     
-    <div class="logo">
-      <img src="/assets/imagens/icon-branco.png" alt="">
-      <span>NoFood</span>
-    </div>
-  
-    <ion-list no-lines >
-      <ion-item>
-        <ion-input type="text" placeholder="E-mail" ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" placeholder="Senha"></ion-input>
-      </ion-item>
-    </ion-list>
-  
-    <ion-grid>
-      <ion-row>
-        <button ion-button block round color="secondary" (click)="abrirCategoria()">
-          Efetuar Login
-        </button>
-      </ion-row>
-      <ion-row>
-        <button ion-button block outline round color="secondary">
-          Cadastrar-se
-        </button>
-      </ion-row>
-    </ion-grid>
-  
-    <ion-grid>
-      <ion-row>
-          <button ion-button clear block color="light">
-            Administrar Cadastros
-          </button>
-      </ion-row>
-    </ion-grid>
-
+  <div class="logo">
+    <img src="/assets/imagens/icon-branco.png" alt="">
+    <span>NoFood</span>
   </div>
+
+  <ion-list no-lines >
+    <ion-item>
+      <ion-input type="text" placeholder="E-mail" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <button ion-button block round color="secondary" (click)="abrirCategoria()">
+        Efetuar Login
+      </button>
+    </ion-row>
+    <ion-row>
+      <button ion-button block outline round color="secondary">
+        Cadastrar-se
+      </button>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+        <button ion-button clear block color="light">
+          Administrar Cadastros
+        </button>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

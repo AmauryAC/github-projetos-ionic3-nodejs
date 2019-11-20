@@ -21,12 +21,14 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private usuarioSrv: UsuarioProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
+  async login(): Promise<void> {
+    let result = await this.usuarioSrv.autenticate(this.form.email, this.form.senha);
+    
+    if(result.success) {
+      // Enviar para a rota certa
+    }
 
-  abrirCategoria(): void {
-    this.navCtrl.setRoot('CategoriaPage');
+    console.log(result);
   }
 
 }

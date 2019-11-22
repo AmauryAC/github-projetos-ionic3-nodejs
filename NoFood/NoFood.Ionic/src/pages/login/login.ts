@@ -25,7 +25,8 @@ export class LoginPage {
     let result = await this.usuarioSrv.autenticate(this.form.email, this.form.senha);
     
     if(result.success) {
-      // Enviar para a rota certa
+      UsuarioProvider.RegisterLogin(result.data);
+      this.navCtrl.setRoot('CategoriaPage');
     }
 
     console.log(result);

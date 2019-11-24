@@ -22,8 +22,8 @@ export class CategoriaPage {
     console.log('ionViewDidLoad CategoriaPage');
   }
 
-  abrirProduto(): void {
-    this.navCtrl.setRoot('TabsPage');
+  gerenciarCategoria(): void {
+    this.navCtrl.push('AdmCategoriasPage');
   }
 
 }

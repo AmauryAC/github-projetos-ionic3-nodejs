@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AlertController, ToastController } from 'ionic-angular/umd';
+import { AlertController, ToastController } from 'ionic-angular';
 
 /*
   Generated class for the AlertProvider provider.

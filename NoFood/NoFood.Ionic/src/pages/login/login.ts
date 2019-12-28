@@ -21,13 +21,19 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private usuarioSrv: UsuarioProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-
   async login(): Promise<void> {
     let result = await this.usuarioSrv.autenticate(this.form.email, this.form.senha);
+
+    if(result.success) {
+      UsuarioProvider.RegisterLogin(result.data);
+      this.navCtrl.setRoot('CategoriaPage');
+    }
+    
     console.log(result);
+  }
+
+  cadastrar(): void {
+    this.navCtrl.setRoot('CadastroPage');
   }
 
 }

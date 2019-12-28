@@ -16,7 +16,7 @@ export class SpinnerProvider {
     
   }
 
-  show(message: string): void {
+  public show(message: string): void {
     if(this.spinner == null) {
       this.spinner = this.loadingCtrl.create({
         content: (message || 'Carregando...')
@@ -28,7 +28,7 @@ export class SpinnerProvider {
     }
   }
 
-  hide(): void {
+  public hide(): void {
     this.spinner.dismiss();
     this.spinner = null;
   }

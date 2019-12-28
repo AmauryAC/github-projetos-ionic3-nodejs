@@ -15,7 +15,7 @@ export class AlertProvider {
     
   }
 
-  toast(title: string, position: string): void {
+  public toast(title: string, position: string): void {
     this.toastCtrl.create({
       message: title,
       position: position,
@@ -23,7 +23,7 @@ export class AlertProvider {
     }).present();
   }
 
-  alert(title: string, message: string): void {
+  public alert(title: string, message: string): void {
     this.alertCtrl.create({
       title: title,
       message: message,
@@ -32,7 +32,7 @@ export class AlertProvider {
     }).present();
   }
 
-  confirm(title: string, message: string, callback: any): void {
+  public confirm(title: string, message: string, callback: any): void {
     this.alertCtrl.create({
       title: title,
       message: message,

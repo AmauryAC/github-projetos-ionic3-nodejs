@@ -3,7 +3,7 @@
     <name>NoFood</name>
     <description>Aplicativo criado no curso da Udemy.</description>
     <author email="aluno@aluno.com.br" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.5:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -100,6 +100,7 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.2" />
-    <engine name="ios" spec="~4.5.5" />
-    <engine name="android" spec="~7.0.0" />
+    <allow-navigation href="http://192.168.1.5:8100" sessionid="a4ec5f37" />
+    <engine name="ios" spec="^4.5.5" />
+    <engine name="android" spec="7.0.0" />
 </widget>

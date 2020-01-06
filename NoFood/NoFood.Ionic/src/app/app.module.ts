@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Camera } from '@ionic-native/camera';
+import { Network } from '@ionic-native/network/ngx';
 
 import { MyApp } from './app.component';
 import { SpinnerProvider } from '../providers/spinner/spinner';
@@ -12,6 +14,7 @@ import { NetworkProvider } from '../providers/network/network';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriaProvider } from '../providers/categoria/categoria';
+import { CameraProvider } from '../providers/camera/camera';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { CategoriaProvider } from '../providers/categoria/categoria';
     HttpProvider,
     NetworkProvider,
     UsuarioProvider,
-    CategoriaProvider
+    CategoriaProvider,
+    CameraProvider,
+    Camera,
+    Network
   ]
 })
 export class AppModule {}

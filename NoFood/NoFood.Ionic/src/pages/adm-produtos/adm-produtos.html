@@ -1,5 +1,5 @@
 <!--
-  Generated template for the AdmCategoriasPage page.
+  Generated template for the AdmProdutosPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Categorias</ion-title>
+    <ion-title>Produtos</ion-title>
     <ion-buttons right>
       <button ion-button icon-only (click)="addOrEdit({})">
         <ion-icon name="add"></ion-icon>
@@ -22,10 +22,13 @@
 
   <ion-list lines>
     <ion-item text-wrap *ngIf="lista.length == 0">
-      Você não tem nenhuma categoria cadastrada.
+      Você não tem nenhum produto cadastrado.
     </ion-item>
     <ion-item *ngFor="let item of lista" text-wrap (click)="addOrEdit(item)">
-      {{ item.titulo }}
+      {{ item.nome }}
+      <ion-note item-end>
+        {{ item.categoriaId.titulo }}
+      </ion-note>
     </ion-item>
   </ion-list>
 

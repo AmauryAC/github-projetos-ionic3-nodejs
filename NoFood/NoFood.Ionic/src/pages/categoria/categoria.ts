@@ -1,5 +1,7 @@
+import { CategoriaProvider } from './../../providers/categoria/categoria';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { CategoriaModel } from '../../app/models/categoriaModel';
 
 /**
  * Generated class for the CategoriaPage page.
@@ -15,14 +17,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CategoriaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  categorias: Array<CategoriaModel> = new Array<CategoriaModel>();
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private categoriaSrv: CategoriaProvider, public actionSheetCtrl: ActionSheetController) {
+  }
+
+  ionViewWillEnter() {
+    this._loadData();
+  }
+
+  private async _loadData(): Promise<void> {
+    let categoriaResult = await this.categoriaSrv.get();
+
+    if(categoriaResult.success) {
+      this.categorias = <Array<CategoriaModel>>categoriaResult.data;
+    }
+  }
+
+  adminOptions(): void {
+    let action = this.actionSheetCtrl.create({
+      title: 'Administração',
+      buttons: [
+        { text: 'Gerenciar Categorias', handler: () => { this.gerenciarCategoria(); } },
+        { text: 'Gerenciar Produtos', handler: () => { this.gerenciarProduto(); } },
+        { text: 'Cancelar', handler: () => {}, role: 'destructive' }
+      ]
+    }).present();
   }
   
-  gerenciarCategoria(): void {
+  private gerenciarCategoria(): void {
     this.navCtrl.push('AdmCategoriasPage');
   }
 
-  gerenciarProduto(): void {
+  private gerenciarProduto(): void {
     this.navCtrl.push('AdmProdutosPage');
   }
 

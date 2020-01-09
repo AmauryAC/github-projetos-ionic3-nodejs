@@ -27,7 +27,7 @@ export class AdmProdutoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController, public platform: Platform, private cameraSrv: CameraProvider, private produtoSrv: ProdutoProvider, private categoriaSrv: CategoriaProvider, private alertSrv: AlertProvider) {
     let _prod = this.navParams.get('_produto');
 
-    if(_prod) {
+    if(_prod && _prod._id) {
       this.produto = <ProdutoModel>_prod;
       this.produto.categoriaId = _prod.categoriaId._id;
     }

@@ -18,8 +18,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class AdmProdutosPage {
 
   lista: Array<ProdutoModel> = new Array<ProdutoModel>();
+  isLoading: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private produtoSrv: ProdutoProvider) {
+    //this._loadData();
+  }
+
+  ionViewWillEnter() {
+    this.isLoading = true;
     this._loadData();
   }
 
@@ -27,8 +33,8 @@ export class AdmProdutosPage {
     let produtosResult = await this.produtoSrv.get();
 
     if(produtosResult.success) {
+      this.isLoading = false;
       this.lista = <Array<ProdutoModel>>produtosResult.data;
-      console.log(this.lista);
     }
   }
 

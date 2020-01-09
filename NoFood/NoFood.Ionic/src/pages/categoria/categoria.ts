@@ -1,3 +1,4 @@
+import { ConfigHelper } from './../../app/helpers/configHelper';
 import { CategoriaProvider } from './../../providers/categoria/categoria';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
@@ -43,6 +44,11 @@ export class CategoriaPage {
         { text: 'Cancelar', handler: () => {}, role: 'destructive' }
       ]
     }).present();
+  }
+
+  selecionarProduto(item: CategoriaModel) {
+    localStorage.setItem(ConfigHelper.storageKeys.selectedCategory, JSON.stringify(item));
+    this.navCtrl.setRoot('TabsPage');
   }
   
   private gerenciarCategoria(): void {

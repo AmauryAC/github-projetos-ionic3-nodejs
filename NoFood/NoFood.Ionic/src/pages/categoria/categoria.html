@@ -19,7 +19,7 @@
 
   <p class="chamada">O que deseja comer hoje?</p>
 
-  <div class="categoria" *ngFor="let item of categorias">
+  <div class="categoria" *ngFor="let item of categorias" (click)="selecionarProduto(item)">
     <div class="image" [ngStyle]="{'background-image': 'url(' + item.foto + ')'}">
 
     </div>

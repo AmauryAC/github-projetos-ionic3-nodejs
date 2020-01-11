@@ -48,7 +48,7 @@ export class CategoriaPage {
 
   selecionarProduto(item: CategoriaModel) {
     localStorage.setItem(ConfigHelper.storageKeys.selectedCategory, JSON.stringify(item));
-    this.navCtrl.setRoot('TabsPage');
+    this.navCtrl.setRoot('ProdutosPage');
   }
   
   private gerenciarCategoria(): void {

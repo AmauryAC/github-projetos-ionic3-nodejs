@@ -38,4 +38,8 @@ export class ProdutosPage {
     }
   }
 
+  quantidadeAlterada(produto: ProdutoModel, evt: number): void {
+    console.log(`${produto.nome} - Quantidade: ${evt}`);
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the QuantidadeComponent component.
@@ -14,17 +14,24 @@ export class QuantidadeComponent {
 
   numero: number = 1;
 
+  @Output() quantidadeAlterada = new EventEmitter();
+
   constructor() {
   }
 
   adicionar() {
-    if(this.numero < 99)
+    if(this.numero < 99) {
       this.numero += 1;
+      this.quantidadeAlterada.emit(this.numero);
+    }
+
   }
 
   remover() {
-    if(this.numero > 1)
+    if(this.numero > 1) {
       this.numero -= 1;
+      this.quantidadeAlterada.emit(this.numero);
+    }
   }
 
 }

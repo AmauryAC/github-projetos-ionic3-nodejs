@@ -46,6 +46,7 @@ page-produtos {
         border: 1px solid #E2DDDD;
         box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
         padding: 10px;
+        overflow: auto;
     }
 
     .produto .titulo {
@@ -65,6 +66,8 @@ page-produtos {
         height: 100px;
         margin-right: 10px;
         border-radius: 10px;
+        background-size: cover;
+        background-position: 50% 50%;
     }
 
     .produto .preco {

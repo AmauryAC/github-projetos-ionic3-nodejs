@@ -26,10 +26,12 @@ class usuarioRepository {
     }
 
     async update(id, data) {
+        console.log(data);
         let usuarioAtualizado = await this._base.update(id, {
             nome: data.nome,
             email: data.email,
-            foto: data.foto
+            foto: data.foto,
+            telefone: data.telefone
         });
 
         return this._base._model.findById(usuarioAtualizado._id, this._projection);
@@ -40,7 +42,7 @@ class usuarioRepository {
     }
 
     async getById(id) {
-        return await this._base._model.findById(id, 'nome email _id foto');
+        return await this._base._model.findById(id, 'nome email _id foto telefone');
     }
 
     async delete(id) {

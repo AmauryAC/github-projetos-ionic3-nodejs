@@ -1,3 +1,48 @@
 page-minha-conta {
+    ion-content {
+        background: #F8F8F8 !important;
+    }
 
+    .titulo {
+        font-size: 2rem;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .image {
+        width: 120px;
+        height: 120px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-size: cover;
+    }
+
+    .formulario {
+        margin-top: 170px;
+        padding: 10px;
+    }
+
+    .formulario input {
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 7px;
+        background: #f8f8f8;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        text-transform: uppercase;
+    }
+
+    .image {
+        position: absolute;
+        left: 50%;
+        margin-left: -60px !important;
+        margin-top: 24px !important;
+    }
+
+    .botao {
+        position: fixed;
+        width: calc(100% - 20px);
+        bottom: 85px;
+    }
 }

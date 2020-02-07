@@ -3,28 +3,6 @@ page-produtos {
         background: #F8F8F8 !important;
     }
 
-    .topo {
-        position: fixed;
-        width: 100%;
-        height: 200px;
-        background: red;
-        background: linear-gradient(to bottom, rgba(255, 0, 0, 1) 0%, rgba(139, 0, 0, 1) 100%);
-    }
-
-    .titulo {
-        position: relative;
-        color: white;
-    }
-
-    .titulo p {
-        float: left;
-        font-size: 2rem;
-        font-weight: bold;
-        margin: 0px;
-        margin-left: 15px;
-        margin-top: 15px;
-    }
-
     .titulo .cart {
         float: right;
         font-size: 1.7rem;
